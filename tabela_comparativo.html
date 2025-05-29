@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela Comparativa de Propostas</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .empresa {
+            margin-bottom: 40px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .empresa:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .empresa-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            font-size: 1.8em;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+            vertical-align: top;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            font-weight: 600;
+            color: #495057;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        
+        tr:hover {
+            background-color: #f8f9ff;
+            transition: background-color 0.2s ease;
+        }
+        
+        .valor {
+            font-weight: bold;
+            color: #27ae60;
+        }
+        
+        .valor-usd {
+            font-weight: bold;
+            color: #3498db;
+        }
+        
+        .total-row {
+            background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
+            font-weight: bold;
+            border-top: 3px solid #28a745;
+        }
+        
+        .mensal {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            border-left: 4px solid #ffc107;
+        }
+        
+        .unico {
+            background: linear-gradient(135deg, #e2e3ff 0%, #c5cae9 100%);
+            border-left: 4px solid #6c5ce7;
+        }
+        
+        .observacoes {
+            font-size: 0.9em;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .resumo {
+            margin-top: 40px;
+            padding: 25px;
+            background: linear-gradient(135deg, #dff0d8 0%, #c3e6cb 100%);
+            border-radius: 12px;
+            border-left: 5px solid #28a745;
+        }
+        
+        .resumo h2 {
+            color: #155724;
+            margin-bottom: 15px;
+        }
+        
+        .resumo-item {
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+        }
+        
+        @media (max-width: 1200px) {
+            table {
+                font-size: 0.9em;
+            }
+            
+            th, td {
+                padding: 10px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+                margin: 10px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            table {
+                font-size: 0.8em;
+            }
+            
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Tabela Comparativa de Propostas - Segurança TI</h1>
+        
+        <!-- FORT LOCK -->
+        <div class="empresa">
+            <div class="empresa-header">🔒 FORT LOCK</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Descrição</th>
+                        <th>Valor Unitário</th>
+                        <th>Quantidade</th>
+                        <th>Valor Total</th>
+                        <th>Observações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="unico">
+                        <td>Licença Bitdefender EDR</td>
+                        <td>110 licenças (pagamento único para 36 meses)</td>
+                        <td class="valor">R$ 205,00</td>
+                        <td>110</td>
+                        <td class="valor">R$ 22.550,00</td>
+                        <td class="observacoes">R$ 205,00 por licença para 36 meses</td>
+                    </tr>
+                    <tr class="mensal">
+                        <td>Firewall Matriz</td>
+                        <td>Manutenção e suporte</td>
+                        <td class="valor">R$ 2.500,00</td>
+                        <td>1</td>
+                        <td class="valor">R$ 0,00*</td>
+                        <td class="observacoes">Valor mensal, pagamento a partir de 30 dias após implementação</td>
+                    </tr>
+                    <tr class="mensal">
+                        <td>Firewall Filial</td>
+                        <td>Manutenção e suporte</td>
+                        <td class="valor">R$ 2.500,00</td>
+                        <td>1</td>
+                        <td class="valor">R$ 0,00*</td>
+                        <td class="observacoes">Valor mensal, pagamento a partir de 30 dias após implementação</td>
+                    </tr>
+                    <tr class="unico">
+                        <td>Mão de Obra</td>
+                        <td>Instalação e configuração inicial</td>
+                        <td class="valor">R$ 6.000,00</td>
+                        <td>1</td>
+                        <td class="valor">R$ 6.000,00</td>
+                        <td class="observacoes">Valor único</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td colspan="4"><strong>TOTAL (Na Implementação)</strong></td>
+                        <td class="valor"><strong>R$ 28.550,00</strong></td>
+                        <td class="observacoes">Inclui mão de obra e licenças EDR por 36 meses</td>
+                    </tr>
+                    <tr class="total-row mensal">
+                        <td colspan="4"><strong>TOTAL (Mensal a partir de 30 dias)</strong></td>
+                        <td class="valor"><strong>R$ 5.000,00</strong></td>
+                        <td class="observacoes">Valor mensal recorrente (R$ 2.500,00 x 2)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- RGK4IT -->
+        <div class="empresa">
+            <div class="empresa-header">🛡️ RGK4IT</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Produto(s)</th>
+                        <th>Quantidade</th>
+                        <th>Preço Unitário</th>
+                        <th>Montante Total</th>
+                        <th>Observações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="unico">
+                        <td>Kaspersky EDR Foundations - 3 anos (50-99 Users)</td>
+                        <td>60</td>
+                        <td class="valor">R$ 221,68</td>
+                        <td class="valor">R$ 13.300,80</td>
+                        <td class="observacoes">KL4065KAQTR - Brazilian Edition</td>
+                    </tr>
+                    <tr class="unico">
+                        <td>Kaspersky EDR Foundations - 3 anos (50-99 Users)</td>
+                        <td>50</td>
+                        <td class="valor">R$ 221,68</td>
+                        <td class="valor">R$ 11.084,00</td>
+                        <td class="observacoes">KL4065KAQTR - Brazilian Edition</td>
+                    </tr>
+                    <tr class="unico">
+                        <td>Mão De Obra</td>
+                        <td>2</td>
+                        <td class="valor">R$ 6.500,00</td>
+                        <td class="valor">R$ 13.000,00</td>
+                        <td class="observacoes">Implantação, Migração e Serviços Profissionais</td>
+                    </tr>
+                    <tr class="unico">
+                        <td>FortiGate-100F</td>
+                        <td>2</td>
+                        <td class="valor">R$ 32.670,09</td>
+                        <td class="valor">R$ 65.340,18</td>
+                        <td class="observacoes">FG-100F</td>
+                    </tr>
+                    <tr class="unico">
+                        <td>UTP (1 ano)</td>
+                        <td>2</td>
+                        <td class="valor">R$ 13.490,25</td>
+                        <td class="valor">R$ 26.980,50</td>
+                        <td class="observacoes">Unified Threat Protection</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td colspan="3"><strong>TOTAL GERAL</strong></td>
+                        <td class="valor"><strong>R$ 116.705,48</strong></td>
+                        <td class="observacoes">Investimento único</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- PRO ADVANCED-1 -->
+        <div class="empresa">
+            <div class="empresa-header">⚡ PRO ADVANCED-1</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Produto(s)</th>
+                        <th>Qtd</th>
+                        <th>Preço Unitário</th>
+                        <th>Montante Total</th>
+                        <th>Tipo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="unico">
+                        <td>Firewall Zyxel USG FLEX 100 (3 anos)</td>
+                        <td>1</td>
+                        <td class="valor">R$ 6.509,14</td>
+                        <td class="valor">R$ 6.509,14</td>
+                        <td>Único</td>
+                    </tr>
+                    <tr class="unico">
+                        <td>Firewall Zyxel USG FLEX 500 (3 anos)</td>
+                        <td>1</td>
+                        <td class="valor">R$ 16.131,56</td>
+                        <td class="valor">R$ 16.131,56</td>
+                        <td>Único</td>
+                    </tr>
+                    <tr class="mensal">
+                        <td>Serviços NOC Firewall (Matriz e Filial)</td>
+                        <td>1</td>
+                        <td class="valor">R$ 2.600,00</td>
+                        <td class="valor">R$ 2.600,00</td>
+                        <td>Mensal</td>
+                    </tr>
+                    <tr class="mensal">
+                        <td>Solução Firewall com serviço completo</td>
+                        <td>1</td>
+                        <td class="valor">R$ 5.900,00</td>
+                        <td class="valor">R$ 5.900,00</td>
+                        <td>Mensal</td>
+                    </tr>
+                    <tr class="mensal">
+                        <td>Acronis Advanced Security+EDR (120 licenças)</td>
+                        <td>120</td>
+                        <td class="valor">R$ 18,65</td>
+                        <td class="valor">R$ 2.238,00</td>
+                        <td>Mensal</td>
+                    </tr>
+                    <tr class="mensal">
+                        <td>Gestão e Suporte EDR (Opcional)</td>
+                        <td>1</td>
+                        <td class="valor">R$ 2.300,00</td>
+                        <td class="valor">R$ 2.300,00</td>
+                        <td>Mensal</td>
+                    </tr>
+                    <tr class="unico">
+                        <td>Implantação EndPoint (remotamente)</td>
+                        <td>1</td>
+                        <td class="valor">R$ 21.900,00</td>
+                        <td class="valor">R$ 21.900,00</td>
+                        <td>Único</td>
+                    </tr>
+                    <tr class="total-row unico">
+                        <td colspan="3"><strong>TOTAL INICIAL</strong></td>
+                        <td class="valor"><strong>R$ 44.540,70</strong></td>
+                        <td><strong>Pagamento Único</strong></td>
+                    </tr>
+                    <tr class="total-row mensal">
+                        <td colspan="3"><strong>TOTAL MENSAL</strong></td>
+                        <td class="valor"><strong>R$ 13.038,00</strong></td>
+                        <td><strong>Recorrente</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- PRO ADVANCED-2 -->
+        <div class="empresa">
+            <div class="empresa-header">🔥 PRO ADVANCED-2</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Produto(s)</th>
+                        <th>Qtd</th>
+                        <th>Preço Unitário</th>
+                        <th>Montante Total</th>
+                        <th>Observações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="unico">
+                        <td>Firewall Sophos XGS 108 (1 ano)</td>
+                        <td>1</td>
+                        <td class="valor-usd">$3.059,42</td>
+                        <td class="valor-usd">$3.059,42</td>
+                        <td class="observacoes">Xstream Protection</td>
+                    </tr>
+                    <tr class="unico">
+                        <td>Firewall Sophos XGS 128 (1 ano)</td>
+                        <td>1</td>
+                        <td class="valor-usd">$1.664,54</td>
+                        <td class="valor-usd">$1.664,54</td>
+                        <td class="observacoes">Xstream Protection</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td colspan="3"><strong>Subtotal Firewalls</strong></td>
+                        <td class="valor-usd"><strong>$4.723,96</strong></td>
+                        <td class="observacoes">Compra</td>
+                    </tr>
+                    <tr class="unico">
+                        <td>Endpoint Intercept X Advanced Workstation (36 meses)</td>
+                        <td>110</td>
+                        <td class="valor-usd">$88,50</td>
+                        <td class="valor-usd">$9.735,00</td>
+                        <td class="observacoes">Com EDR</td>
+                    </tr>
+                    <tr class="unico">
+                        <td>Endpoint Intercept X Advanced Server (36 meses)</td>
+                        <td>10</td>
+                        <td class="valor-usd">$166,75</td>
+                        <td class="valor-usd">$1.667,50</td>
+                        <td class="observacoes">Com EDR</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td colspan="3"><strong>Subtotal Licenças Endpoint EDR</strong></td>
+                        <td class="valor-usd"><strong>$11.402,50</strong></td>
+                        <td class="observacoes">36 meses</td>
+                    </tr>
+                    <tr class="mensal">
+                        <td>Firewall Sophos com gestão completa (3 anos)</td>
+                        <td>1</td>
+                        <td class="valor">R$ 7.700,00</td>
+                        <td class="valor">R$ 7.700,00</td>
+                        <td class="observacoes">XGS 108 + XGS 128</td>
+                    </tr>
+                    <tr class="mensal">
+                        <td>Serviços NOC Firewall (Matriz e Filial)</td>
+                        <td>1</td>
+                        <td class="valor">R$ 2.600,00</td>
+                        <td class="valor">R$ 2.600,00</td>
+                        <td class="observacoes">Mensal</td>
+                    </tr>
+                    <tr class="mensal">
+                        <td>Gestão e Suporte EDR (Opcional)</td>
+                        <td>1</td>
+                        <td class="valor">R$ 2.300,00</td>
+                        <td class="valor">R$ 2.300,00</td>
+                        <td class="observacoes">Mensal</td>
+                    </tr>
+                    <tr class="unico">
+                        <td>Implantação Firewall e Endpoint</td>
+                        <td>1</td>
+                        <td class="valor">R$ 21.900,00</td>
+                        <td class="valor">R$ 21.900,00</td>
+                        <td class="observacoes">Remotamente</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td colspan="3"><strong>TOTAL USD (Licenças)</strong></td>
+                        <td class="valor-usd"><strong>$16.126,46</strong></td>
+                        <td class="observacoes">Firewalls + EDR</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td colspan="3"><strong>TOTAL BRL (Único)</strong></td>
+                        <td class="valor"><strong>R$ 21.900,00</strong></td>
+                        <td class="observacoes">Implantação</td>
+                    </tr>
+                    <tr class="total-row mensal">
+                        <td colspan="3"><strong>TOTAL BRL (Mensal)</strong></td>
+                        <td class="valor"><strong>R$ 12.600,00</strong></td>
+                        <td class="observacoes">Serviços recorrentes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- RESUMO COMPARATIVO -->
+        <div class="resumo">
+            <h2>📋 Resumo Comparativo</h2>
+            
+            <div class="resumo-item">
+                <strong>🔒 FORT LOCK:</strong> 
+                <span class="valor">R$ 28.550,00 (inicial)</span> + 
+                <span class="valor">R$ 5.000,00/mês</span>
+                <br><small>Bitdefender EDR (110 licenças/36 meses) + Manutenção Firewalls</small>
+            </div>
+            
+            <div class="resumo-item">
+                <strong>🛡️ RGK4IT:</strong> 
+                <span class="valor">R$ 116.705,48 (único)</span>
+                <br><small>Kaspersky EDR (110 licenças/3 anos) + FortiGate-100F (2 unidades) + UTP</small>
+            </div>
+            
+            <div class="resumo-item">
+                <strong>⚡ PRO ADVANCED-1:</strong> 
+                <span class="valor">R$ 44.540,70 (inicial)</span> + 
+                <span class="valor">R$ 13.038,00/mês</span>
+                <br><small>Zyxel Firewalls + Acronis EDR (120 licenças) + Serviços NOC</small>
+            </div>
+            
+            <div class="resumo-item">
+                <strong>🔥 PRO ADVANCED-2:</strong> 
+                <span class="valor-usd">$16.126,46</span> + 
+                <span class="valor">R$ 21.900,00 (inicial)</span> + 
+                <span class="valor">R$ 12.600,00/mês</span>
+                <br><small>Sophos Firewalls + Intercept X EDR (120 licenças/36 meses)</small>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
